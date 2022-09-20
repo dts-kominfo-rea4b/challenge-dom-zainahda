@@ -56,9 +56,11 @@
       // TODO: register event onkeypress / addEventListener untuk input
       // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
 
-      button.addEventListener("keypress", function () {
+      input.addEventListener("keyup", function (event) {
         event.preventDefault()
-        fnClickHandler(input.value);
+          if (event.keyup === 'Enter') {
+            fnClickHandler(input.value);
+          }
       });
     </script>
   </body>
